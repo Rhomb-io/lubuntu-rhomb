@@ -145,25 +145,25 @@ function get_lubuntu () {
 	then
 		mkdir -p $DOWNLOAD_DIR
 		cd $DOWNLOAD_DIR
-		wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.4/lubuntu_rhomb_base_14_04_5.tgz
-		wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.5/lib.tgz
-		wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.6/share.tgz
+		wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.0/lubuntu_rhomb_base_14_04_5.tgz
+		wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.1/lib.tgz
+		wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.2/share.tgz
 	elif [ -d $DOWNLOAD_DIR ]
 	then
 		if [ ! -f $DOWNLOAD_DIR/lubuntu_rhomb_base_14_04_5.tgz ]
 		then
 			cd $DOWNLOAD_DIR
-			wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.4/lubuntu_rhomb_base_14_04_5.tgz
+			wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.0/lubuntu_rhomb_base_14_04_5.tgz
 		fi
 		if [ ! -f $DOWNLOAD_DIR/lib.tgz ]
 		then
 			cd $DOWNLOAD_DIR
-			wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.5/lib.tgz
+			wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.1/lib.tgz
 		fi
 		if [ ! -f $DOWNLOAD_DIR/share.tgz ]
 		then
 			cd $DOWNLOAD_DIR
-			wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.6/share.tgz
+			wget https://github.com/Rhomb-io/lubuntu-rhomb/releases/download/1.0.2/share.tgz
 		fi
 	fi
 	cd $BUILD_DIR

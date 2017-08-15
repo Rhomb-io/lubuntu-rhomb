@@ -6,7 +6,7 @@ This is pakcage to build and install lubuntu filesystem on rhomb devices.
 Prerequisites
 -------------
 For lubuntu installation use SD card having atleast 16GB capacity.
-To use lubuntu pakcage machine should have atleast 15GB free space available. 
+To use lubuntu pakcage machine should have atleast 15GB free space available.
 
 Please delete all the partitions in SD card before using it for flashing.
 ------------------
@@ -18,8 +18,8 @@ Build Instructions
    all the packages and then compile. It will generated zImage (dtb appended )
    and lubuntu.tgz in "<lubuntu-rhomb>/output/images/".
 
-   If user is using this package first time it is mandatory to run 
-   "sudo ./build.sh all" command. 
+   If user is using this package first time it is mandatory to run
+   "sudo ./build.sh all" command.
 
 2) To rebuild linux kernel.
    # sudo ./build.sh linux
@@ -40,8 +40,8 @@ Build Instructions
 --------------------
 Install instructions
 --------------------
-1) There is one more script 'prepare_sd.sh'. This scripts flashes all the required 
-   binaries to boot from SD card having lubuntu filesystem. 
+1) There is one more script 'prepare_sd.sh'. This scripts flashes all the required
+   binaries to boot from SD card having lubuntu filesystem.
    run 'prepare_sd.sh' script:
    # sudo ./prepare_sd.sh <SD Reader's device file>
    example <SD Reader's device file> : sdb, mmcblk0, sdd, sdc etc
@@ -49,13 +49,22 @@ Install instructions
    Insert prepared SD card and power on board.
 
 2) For EMMC flashing user need to first follow build instructions and boot
-   from SD card as instructed in above step 1 of install instructions. 
-3) After that apply below commands.
+   from SD card as instructed in above step 1 of install instructions.
+
+NOTE: Right now we are using slim display manager in lubuntu. With which we are
+facing some issue with serial terminal once slim display manager starts. We are
+working to resolve it. Meanwhile you can connect keyboard with board to apply
+below commands after login.
+Username: rhomb
+Passward: rhomb
+
+3) Once login apply press "Ctrl + Alt + T" to open terminal.
+4) After that apply below commands.
    # cd /opt/
    # sudo tar -xzvf images.tgz --warning=no-timestamp
    # cd images
    # sudo ./emmc_fusing.sh mmcblk1
-        (This script will ask user if "/dev/mmcblk1p1" already formated with
+        (This script may ask user if "/dev/mmcblk1p1" already formated with
 	ext4 filesystem as below)
 
         /dev/mmcblk1p1 contains a ext4 file system
@@ -63,7 +72,7 @@ Install instructions
         Proceed anyway? (y,N)
         Enter 'y' if it asked first time.
         For next time onwards user can enter 'N'
-4) At the end of above command below messages will be printed
+4) At the end of above commands below messages will be printed
         eMMC flashed
         Power off the board
         Set emmc boot mode boot board

@@ -27,6 +27,7 @@ function flash_bootloder () {
 function copy_emmc_flashing_files () {
 	cd $OUTPUT_DIR
 	sudo tar -cvzf images.tgz images
+	sudo mkdir -p /mnt/tmp/opt/
 	sudo cp images.tgz /mnt/tmp/opt/
 }
 
